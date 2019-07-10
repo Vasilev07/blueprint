@@ -1,0 +1,14 @@
+{
+    "extends": "tslint:recommended",
+    "rulesDirectory": ["/media/rog/DATA/blueprint/tsconfig.json"],
+    "rules": {
+        "max-line-length": {
+            "options": [120]
+        },
+    },
+    "jsRules": {
+        "max-line-length": {
+            "options": [120]
+        }
+    }
+}

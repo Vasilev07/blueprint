@@ -13,8 +13,10 @@ export const expressInit = (app: Application) => {
     }
 
     app.use(bodyParser.urlencoded({
-        extended: true,
+        extended: false,
     }));
+
+    app.use(bodyParser.json());
 
     app.use('/static', express.static(path.join(__dirname, '../../public')));
     app.use(morgan('combined'));

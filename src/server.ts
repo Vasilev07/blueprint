@@ -1,13 +1,12 @@
-import express, { Application, NextFunction, Request, Response } from 'express';
+import express, { Application } from 'express';
 import mongoose from 'mongoose';
-
+import { expressInit } from './confiigs/expressConfig';
+import { port } from './confiigs/index';
+import { apiRoutesInit } from './routes/api-routes';
 const app: Application = express();
-const port = 5000;
-
-app.get('/', (request: Request, response: Response, next: NextFunction) => {
-  response.send('Hello world!');
-});
-
+const data = {};
+expressInit(app);
+apiRoutesInit(app, data);
 
 const uri: string = "mongodb://localhost:27017/blueprint";
 

@@ -1,6 +1,5 @@
 import { IUser } from '../interfaces/user-interface';
 import { UsersService } from '../services/users-service';
-import { DB } from "./db-controller";
 
 export class UserController {
     public usersService: UsersService;
@@ -9,12 +8,7 @@ export class UserController {
         this.usersService = new UsersService();
     }
     public async createUser(user: IUser): Promise<any> {
-        let newUser = new DB.Models.User(user)
-        newUser.save((err) => {
-            if(err) {
-                throw new Error(err);
-            }
-        })
+       const newUser = this.usersService.createUser(user);
     }
 
     public async validateUsername(usernameToValidate: string): Promise<void> {

@@ -56,12 +56,12 @@ export class UsersService {
     }
 
     private async validateUsername(username: string): Promise<boolean> {
-        const searchForUser = await this.findUserByUsername('Toshosss');
+        const searchForUser = await this.findUserByUsername(username);
 
         return !searchForUser;
     }
 
-    private validateEmail(email: string): string | Error {
+    private async validateEmail(email: string): Promise<string | Error> {
         const emails = await this.getAllEmails();
         const isEmailTaken = emails ? emails.includes(email) : false;
         const pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;

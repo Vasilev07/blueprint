@@ -10,8 +10,4 @@ export class UserController {
     public async createUser(user: IUser): Promise<any> {
        const newUser = this.usersService.createUser(user);
     }
-
-    public async validateUsername(usernameToValidate: string): Promise<void> {
-        const user = await this.usersService.findUserByUsername(usernameToValidate);
-    }
 }

@@ -1,8 +1,8 @@
 import { NextFunction, Request, Response } from 'express';
 import path from 'path';
 
-export const init = (app: any, data: any): void => {
-    console.log(data);
+export const init = (app: any): void => {
+    // console.log(data);
 
     app.set('views', path.join(__dirname, '../views'));
 

@@ -1,5 +1,5 @@
-import { UsersData } from "../data/users-data";
+import { User } from "../schemas/user-schema";
 
 export interface IDataInterface {
-    users: UsersData,
+    users: User | {},
 }

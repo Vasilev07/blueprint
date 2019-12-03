@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import passport from 'passport';
 
-export const init = (app: any, data: any) => {
+export const init = (app: any) => {
     app.post('/login', (req: Request, res: Response, next: NextFunction) => {
         passport.authenticate('local', (err: any, user: any, info: any) => {
             if (err) {

@@ -15,4 +15,8 @@ export class UsersService {
     public async findUserByUsername(username: string): Promise<Document | null> {
         return await DB.Models.User.findOne({ username });
     }
+
+    public hashUserPassword(): void {
+
+    }
 }

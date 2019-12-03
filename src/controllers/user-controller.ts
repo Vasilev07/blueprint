@@ -13,9 +13,5 @@ export class UserController {
 
     public async validateUsername(usernameToValidate: string): Promise<void> {
         const user = await this.usersService.findUserByUsername(usernameToValidate);
-        // console.log(user.username);
-        // const isNameTaken = 
-        // console.log(username);
-        // return 
     }
 }
